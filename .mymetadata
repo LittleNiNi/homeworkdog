@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="homeworkdog"
+  id="myeclipse.1512475946191"
+  context-root="/homeworkdog"
+  j2ee-spec="5.0"
+  archive="homeworkdog.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
