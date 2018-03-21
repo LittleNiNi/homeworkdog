@@ -2,4 +2,20 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
+	<table name="t_customer" catalog="dog"
+		class="com.dog.model.Customer">
+		<primary-key>
+			<generator class="increment"></generator>
+		</primary-key>
+	</table>
+	<table name="t_dog" catalog="dog" class="com.dog.model.Dog">
+		<primary-key>
+			<generator class="increment"></generator>
+		</primary-key>
+	</table>
+<table name="t_order" catalog="dog" class="com.dog.model.Order">
+	<primary-key>
+		<generator class="increment"></generator>
+	</primary-key>
+</table>
 </hibernate-reverse-engineering>

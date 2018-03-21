@@ -1,0 +1,319 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin:0;
+	padding:0;
+	background:#eee;
+	font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+	font-size:14px;
+}
+a{
+	text-decoration:none;/*没有下划线*/
+}
+ul{
+	list-style-type:none;
+}
+
+.container{
+	width:90%;
+	height:auto;
+	margin:5px auto;
+}
+.container aside{
+	margin:10px 0;
+	padding-top:20px;
+	width:20%;
+	height:800px;
+	text-align: center;
+	font-size:24px;
+	float:left;
+	background:rgba(82,170,193,1.00)}
+.container aside img{
+	border-radius:5px;
+	wideth:120px;
+	height:130px;
+	}
+/*.container aside h2{
+	padding-top:20px;
+}*/
+.container aside ul{
+	margin-left:40px;
+	text-align:left;
+}
+.container aside ul>l{
+	font-size:36px;}
+.container aside ul>p{
+	height:30px;
+}
+.container aside ul>p a{
+	color:#333;
+}
+.container aside ul>p a:hover{
+	color:#aaa;
+	font-size:36px;
+}	
+.container aside ul>p.active a{
+	color:#333;
+}
+
+.container section{
+	margin:10px 0;
+	padding:10px 20px;
+	width:76%;
+	height:800px;
+	float:right;
+	
+	/*background-image: url(c36a8564ea904e5717bbe14fed04628d8a01b9b71cb75-ikHezu_fw658.jpg);
+	background-repeat: no-repeat; 
+	background-size: cover;*/
+
+}
+.container section article{
+	margin:30px 0;
+}
+.container section article h3{
+	height:40px;
+	line-height:2.5em;
+	padding-left:20px;
+	border-left:3px solid #e60012;
+}
+.container section article h3 a{
+	font-size:16px;
+	color:#aaa;	
+}
+.container section article h3 a:hover{
+	font-size:16px;
+	color:#149de0;	
+}
+footer{
+	padding:30px 0;
+	text-align:center;
+}
+
+/*书上例子之外的CSS属性都放在以下*/
+.container section article h1{
+	text-align:center;
+	color:red;
+}
+.container section article ul li{
+	display:inline;
+}
+
+.container section article ul.block li{
+	display:block;
+}
+.container section a img{
+	padding:10px 5px;
+	height:120px;
+	width:180px;
+}
+.container section a:hover img{
+	padding:10px 5px;
+	height:121px;
+	width:181px;
+}
+.container section label{
+	height:24px;
+	font-size:16px;
+}
+
+.container section .text-input{
+	margin:10px 0;
+	border:2px solid #31a8e6;
+	border-radius:5px;
+	font-size:14px;
+	height:24px;
+	width:500px;
+	
+}
+.container section textarea{
+	margin:10px 0;
+	border:2px solid #31a8e6;
+	border-radius:5px;
+	font-size:14px;
+	height:80px;
+	width:500px;
+}
+
+.container section .button{
+	margin:20px 0;
+	padding:6px 20px;
+	font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	border:1px solid white;
+	border-radius:3px;
+	font-size:14px;
+	color:white;
+	background:#31a8e6;
+}
+.container section .button:hover{
+	background:#3190e6;
+}
+.container section ol li{
+	
+	height:32px;
+	
+}
+.container section ol li>a{
+	font-size:16px;
+	color:#777;	
+}
+.container section ol li>a:hover{
+	color:#333;}
+/*此行以下为文章css*/
+#kaitou{
+	font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	font-size:20px;
+	text-align:right;
+	margin-top:50px;
+	height:40px;
+	}
+	   
+
+#left{
+	float:left;
+	width:500px;
+	padding:5px;
+    margin-left:5px;
+    border: 1px ;
+	margin-top:10px;
+	height:300px;
+	font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	font-size:16px;
+}
+#left p{text-indent:30px;}/*首行缩进*/
+
+#left img{ float:left;}
+#tupian1{
+	weight: 20px;
+	height: 200px;
+	width: 0px;
+}
+
+#left span {
+	float: left;
+	background-position: 0 0;
+	/*display: block;*/
+	height: 200px;
+	width: 200px;
+	margin-right: 10px;
+	
+}
+
+#right{
+	float:left;
+	width:500px;
+	padding:5px;
+    margin-left:5px;
+    border: 1px  ;
+	margin-top:10px;
+	height:300px;
+	font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	font-size:16px;
+	/*
+	margin-top:5px;height:300px;
+	font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	font-size:16px;*/
+	}
+#right img{float:left;}
+#right ul{text-indent:30px;}
+#right  span {
+	float: left;
+	background-position: 0 0;
+	/*display: block;*/
+	height: 200px;
+	width: 200px;
+	margin-right: 10px;}
+	#left{
+	float:left;
+	width:500px;
+	padding:5px;
+    margin-left:5px;
+    border: 1px ;
+	margin-top:10px;
+	height:300px;
+	font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	font-size:16px;
+}
+
+
+#right2{
+	float:left;
+	width:500px;
+	padding:5px;
+    margin-left:5px;
+    border: 1px  ;
+	margin-top:10px;
+	height:300px;
+	font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	font-size:16px;
+	/*
+	margin-top:5px;height:300px;
+	font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	font-size:16px;*/
+	}
+#right2 img{float:left;}
+#right2 ul{text-indent:30px;}
+#right2  span {
+	float: left;
+	background-position: 0 0;
+	/*display: block;*/
+	height: 200px;
+	width: 200px;
+	margin-right: 10px;}
+	#left2{
+	float:left;
+	width:500px;
+	padding:5px;
+    margin-left:5px;
+    border: 1px ;
+	margin-top:10px;
+	height:300px;
+	font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	font-size:16px;
+}
+#left2{
+	float:left;
+	width:500px;
+	padding:5px;
+    margin-left:5px;
+    border: 1px ;
+	margin-top:10px;
+	height:300px;
+	font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	font-size:16px;
+}
+#left2 p{text-indent:30px;}/*首行缩进*/
+
+#left2 img{ float:left;}
+#tupian1{
+	weight: 20px;
+	height: 200px;
+	width: 0px;
+}
+
+#left2 span {
+	float: left;
+	background-position: 0 0;
+	/*display: block;*/
+	height: 200px;
+	width: 200px;
+	margin-right: 10px;
+	
+}
+#yi{
+margin-top:20px;height:20px;margin-left:400px;}
+#er{margin-top:0px;height:800px;margin-left:10px;}
+#er p{font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	font-size:16px;text-indent:30px;}
+	#er ul{font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	font-size:20px;text-align:right;}
+	
+	
+#one{margin-top:20px;height:20px;margin-left:400px;}
+#two {margin-top:0px;height:800px;margin-left:10px;}
+#two p{font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	font-size:16px;text-indent:30px;}
+#two ul{font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	font-size:20px;text-align:right;}
+

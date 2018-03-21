@@ -14,6 +14,7 @@ public class Dog implements java.io.Serializable {
 	private Integer dogid;
 	private String dogname;
 	private Double unitprice;
+	private String filepath;
 	private Set orders = new HashSet(0);
 	private Set orders_1 = new HashSet(0);
 
@@ -24,9 +25,11 @@ public class Dog implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Dog(String dogname, Double unitprice, Set orders, Set orders_1) {
+	public Dog(String dogname, Double unitprice, String filepath, Set orders,
+			Set orders_1) {
 		this.dogname = dogname;
 		this.unitprice = unitprice;
+		this.filepath = filepath;
 		this.orders = orders;
 		this.orders_1 = orders_1;
 	}
@@ -55,6 +58,14 @@ public class Dog implements java.io.Serializable {
 
 	public void setUnitprice(Double unitprice) {
 		this.unitprice = unitprice;
+	}
+
+	public String getFilepath() {
+		return this.filepath;
+	}
+
+	public void setFilepath(String filepath) {
+		this.filepath = filepath;
 	}
 
 	public Set getOrders() {

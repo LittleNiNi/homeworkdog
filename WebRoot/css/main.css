@@ -1,0 +1,60 @@
+body{
+	font-family:"Microsoft Yahei",寰蒋闆呴粦,"Helvetica Neue",Arial,sans-serif;
+	font-size:16px;
+	background:white;
+}
+
+main{
+	margin-top:10px;
+}
+
+main .search-go{
+	float:right;
+	margin-right:200px;
+	padding:4px 15px;
+	font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	border:1px solid white;
+	border-radius:3px;
+	font-size:14px;
+	color:white;
+	background:#31a8e6;
+	
+}
+
+main .search-go:hover{
+	
+	background:#3190e6;
+	
+}
+main .search{
+	
+	float:right;
+	margin-right:20px;
+	border:2px solid #31a8e6;
+	border-radius:5px;
+	font-size:14px;
+	height:24px;
+	width:200px;
+	
+	
+}
+
+main table{
+	
+	margin:0 auto;
+	border:1px solid #31a8e6;
+	width:500px;
+	
+}
+main table th{
+	
+	height:50px;
+	
+}
+main table td{
+	
+	text-align:center;
+	height:40px;
+}
+
+

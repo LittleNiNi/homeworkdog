@@ -18,6 +18,9 @@
                 <comment>单价</comment>
             </column>
         </property>
+        <property name="filepath" type="java.lang.String">
+            <column name="filepath" length="40" />
+        </property>
         <set name="orders" inverse="true">
             <key>
                 <column name="dog" not-null="true" />

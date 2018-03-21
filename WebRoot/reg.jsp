@@ -17,19 +17,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+	 <link href="css/reg.css" rel="stylesheet" type="text/css">
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
   </head>
-  
-  <body>
+   <!-- <input type="password" required="required" placeholder="密码" name="customer.password"></input>  -->
+  <body style="background:url(images/1.jpg) no-repeat 0% 0%/100% 100% ">
+  <div id="reg">
+    <h1>Reg</h1>
   <s:form action="customer/customer_reg" method="post">
-   <s:textfield name="customer.name" label="用户名"></s:textfield>
-   <s:textfield name="customer.password" label="密码"></s:textfield>
-   <s:textfield name="customer.address" label="地址"></s:textfield>
-   <s:submit value="提交"></s:submit>
-   <s:reset value="重填"></s:reset>
+   <input type="text" required="required" placeholder="用户名" name="customer.name"></input><br>
+   <input type="password" required="required" placeholder="密码" name="customer.password"></input><br>
+   <input type="text" required="required" placeholder="地址" name="customer.address"></input>
+    <button class="but" type="submit" >提交</button> 
+     <button class="no" type="reset" >重置</button> 
+  <!-- <s:submit value="提交"></s:submit>
+   <s:reset value="重填"></s:reset> --> 
    </s:form>
+   </div>
    <br>
   </body>
 </html>

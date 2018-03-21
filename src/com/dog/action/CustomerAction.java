@@ -28,7 +28,7 @@ public class CustomerAction extends ActionSupport{
 	
 	public String reg(Customer customer) throws Exception{
 		customerDao.addCustomer(customer);
-		session.put("customer", customer);
+		//session.put("customer", customer);
 		return "show_view";
 	}
 	public String reg() throws Exception{
@@ -43,37 +43,49 @@ public class CustomerAction extends ActionSupport{
 		this.errMessage = errMessage;
 	}
 	private String errMessage;
-	
 	public String login() {
-		
-		ArrayList<Customer> listCustomer = customerDao.QueryCustomerInfo(customer.getName());
-		if(listCustomer.size()==0) { 
-			
+		Customer db_customer = (Customer)customerDao.QueryCustomerInfo(customer.getName()).get(0);
+		if(db_customer == null) { 
 			this.errMessage = " 账号不存在 ";
 			System.out.print(this.errMessage);
-			return "input";	
-		} 
-		else{
-			
-		    Customer db_customer = listCustomer.get(0);
-			if(!db_customer.getPassword().equals(customer.getPassword())) {
-			
+			return INPUT;
+		} else if( !db_customer.getPassword().equals(customer.getPassword())) {
 			this.errMessage = " 密码不正确! ";
 			System.out.print(this.errMessage);
-			return "input";
-			
-		    }else{
-			
-			session.put("customer",db_customer);
-			prePage = (String) session.get("prePage");
-			System.out.println("将要跳到："+ prePage);
-			session.remove("prePage");  
-			return "success";
-			
-		    }
+			return INPUT;
 		}
-		
+		return "show_view";
 	}
+//	public String login() {
+//		
+//		ArrayList<Customer> listCustomer = customerDao.QueryCustomerInfo(customer.getName());
+//		if(listCustomer.size()==0) { 
+//			
+//			this.errMessage = " 账号不存在 ";
+//			System.out.print(this.errMessage);
+//			return "input";	
+//		} 
+//		else{
+//			
+//		    Customer db_customer = listCustomer.get(0);
+//			if(!db_customer.getPassword().equals(customer.getPassword())) {
+//			
+//			this.errMessage = " 密码不正确! ";
+//			System.out.print(this.errMessage);
+//			return "input";
+//			
+//		    }else{
+//			
+//			session.put("customer",db_customer);
+//			prePage = (String) session.get("prePage");
+//			System.out.println("将要跳到："+ prePage);
+//			session.remove("prePage");  
+//			return "success";
+//			
+//		    }
+//		}
+//		
+//	}
 	public Map<String,Object> getSession() {
 		return session;
 	}

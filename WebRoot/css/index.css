@@ -1,0 +1,231 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	margin:0;
+	padding:0;
+	background:#eee;
+	font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+	font-size:14px;
+}
+a{
+	text-decoration:none;/*没有下划线*/
+}
+ul{
+	list-style-type:none;
+}
+.container{
+	width:90%;
+	height:auto;
+	margin:5px auto;
+}
+.container aside{
+	margin:10px 0;
+	padding-top:20px;
+	width:20%;
+	height:800px;
+	text-align: center;
+	font-size:24px;
+	float:left;
+	background:rgba(82,170,193,1.00)}
+.container aside img{
+	img-radius:10px;
+	wideth:120px;
+	height:130px;
+	border-radius:100px;
+	}
+.container aside h2{
+	padding-top:20px;
+}
+.container aside ul{
+	margin-left:40px;
+	text-align:left;
+}
+.container aside ul>l{
+	font-size:36px;}
+.container aside ul>p{
+	height:30px;
+}
+.container aside ul>p a{
+	color:#333;
+}
+.container aside ul>p a:hover{
+	color:#aaa;
+	font-size:36px;
+}	
+.container aside ul>p.active a{
+	color:#333;
+}
+.container section{
+	margin:10px 0;
+	padding:10px 20px;
+	width:76%;
+	height:800px;
+	float:right;
+	background:#FFFFFF;
+}
+.container section article{
+	margin:30px 0;
+}
+.container section article h3{
+	height:40px;
+	line-height:2.5em;
+	padding-left:20px;
+	border-left:3px solid #e60012;
+}
+.container section article h3 a{
+	font-size:16px;
+	color:#aaa;	
+}
+.container section article h3 a:hover{
+	font-size:16px;
+	color:#149de0;	
+}
+footer{
+	padding:30px 0;
+	text-align:center;
+}
+
+/*书上例子之外的CSS属性都放在以下*/
+.container section article h1{
+	text-align:center;
+	color:red;
+}
+.container section article ul li{
+	display:inline;
+}
+
+.container section article ul.block li{
+	display:block;
+}
+.container section a img{
+	padding:10px 5px;
+	height:120px;
+	width:180px;
+}
+.container section a:hover img{
+	padding:10px 5px;
+	height:121px;
+	width:181px;
+	
+}
+.container section label{
+	height:24px;
+	font-size:16px;
+}
+
+.container section .text-input{
+	margin:10px 0;
+	border:2px solid #31a8e6;
+	border-radius:5px;
+	font-size:14px;
+	height:24px;
+	width:500px;
+	
+}
+.container section textarea{
+	margin:10px 0;
+	border:2px solid #31a8e6;
+	border-radius:5px;
+	font-size:14px;
+	height:80px;
+	width:500px;
+}
+
+.container section .button{
+	margin:20px 0;
+	padding:6px 20px;
+	font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	border:1px solid white;
+	border-radius:3px;
+	font-size:14px;
+	color:white;
+	background:#31a8e6;
+}
+.container section .button:hover{
+	background:#3190e6;
+}
+.container section ol li{
+	
+	height:32px;
+	
+}
+.container section ol li>a{
+	font-size:16px;
+	color:#777;	
+}
+.container section ol li>a:hover{
+	color:#333;}
+.container section article e img{
+	margin-top:75px;
+	height:200px;
+	width:200px;
+}
+.container section article b img{
+	margin-left:30px;
+	margin-top:75px;
+	height:200px;
+	width:200px;
+}
+.container section article c img{
+	margin-left:30px;
+	margin-top:75px;
+	height:200px;
+	width:200px;
+}
+.container section article d img{
+	margin-left:30px;
+	margin-top:75px;
+	height:200px;
+	width:200px;
+}
+.container section article e:hover img{
+	margin-top:25px;
+	margin-left:-20px;
+	margin-right:0px;
+	height:250px;
+	width:250px;
+	}
+.container section article b:hover img{
+	margin-left:0px;
+	margin-right:10px;
+	margin-top:25px;
+	height:250px;
+	width:250px;
+}
+.container section article c:hover img{
+	margin-left:0px;
+	margin-top:25px;
+	height:250px;
+	width:250px;
+}
+.container section article d:hover img{
+	margin-left:0px;
+	margin-top:25px;
+	height:250px;
+	width:250px;
+}
+.container section article p{
+	text-align:center;
+	font-size:24px;
+	}
+.container section article div {
+    text-align:right;
+	font-size:20px;
+	}
+	.container section article img{
+		margin-left:25px;
+	margin-top:75px;
+	height:200px;
+	width:200px;
+}
+.container section article  img:hover{
+	margin-left:5px;
+	margin-top:40px;
+	height:250px;
+	width:250px;
+}
+
+.container aside footer{font-size:15px;}
+
+
+
