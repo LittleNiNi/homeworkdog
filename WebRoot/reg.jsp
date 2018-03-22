@@ -31,7 +31,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <input type="password" required="required" placeholder="密码" name="customer.password"></input><br>
    <input type="text" required="required" placeholder="地址" name="customer.address"></input>
     <button class="but" type="submit" >提交</button> 
-     <button class="no" type="reset" >重置</button> 
   <!-- <s:submit value="提交"></s:submit>
    <s:reset value="重填"></s:reset> --> 
    </s:form>

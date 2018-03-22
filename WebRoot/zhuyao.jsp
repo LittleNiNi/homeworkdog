@@ -18,7 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	
-	 	<link rel="stylesheet" type="text/css" href="css/new11.css">
+	 <link rel="stylesheet" type="text/css" href="css/new11.css">
     <link href="css/carousel.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	

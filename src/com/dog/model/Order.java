@@ -1,9 +1,20 @@
 package com.dog.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
 /**
  * Order entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "t_order", catalog = "dog")
 public class Order implements java.io.Serializable {
 
 	// Fields
@@ -34,7 +45,10 @@ public class Order implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@GenericGenerator(name = "generator", strategy = "increment")
+	@Id
+	@GeneratedValue(generator = "generator")
+	@Column(name = "orderid", unique = true, nullable = false)
 	public Integer getOrderid() {
 		return this.orderid;
 	}
@@ -43,6 +57,8 @@ public class Order implements java.io.Serializable {
 		this.orderid = orderid;
 	}
 
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "customer")
 	public Customer getCustomer() {
 		return this.customer;
 	}
@@ -51,6 +67,8 @@ public class Order implements java.io.Serializable {
 		this.customer = customer;
 	}
 
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "dog", nullable = false)
 	public Dog getDog() {
 		return this.dog;
 	}
@@ -59,6 +77,7 @@ public class Order implements java.io.Serializable {
 		this.dog = dog;
 	}
 
+	@Column(name = "dognum")
 	public Integer getDognum() {
 		return this.dognum;
 	}
@@ -67,6 +86,7 @@ public class Order implements java.io.Serializable {
 		this.dognum = dognum;
 	}
 
+	@Column(name = "total", precision = 22, scale = 0)
 	public Double getTotal() {
 		return this.total;
 	}

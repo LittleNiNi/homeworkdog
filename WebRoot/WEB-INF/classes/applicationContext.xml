@@ -31,16 +31,16 @@
 		<!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
 		<property name="idleConnectionTestPeriod" value="60"/>
 	</bean>
-	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
-		 <property name="mappingResources">
+		<!--  <property name="mappingResources">
 			    <list>
 			      <value>com/dog/model/Dog.hbm.xml</value>
 			      <value>com/dog/model/Customer.hbm.xml</value>
 			      <value>com/dog/model/Order.hbm.xml</value>
 
 			    </list>
-		</property>
+		</property> -->
 		 <property name="hibernateProperties">
 			 <value>
 			      hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
@@ -49,6 +49,8 @@
 			      hibernate.format_sql=false
 			  </value>
 		 </property>
+		  <!-- 自动扫描实体 -->
+		 <property name="packagesToScan" value="com.dog.model"/>
 	</bean>
 	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"/>

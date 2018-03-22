@@ -56,9 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
      <ul class="account">
      			<c:choose>
-		       <c:when test="${customer.name 
-
- ==null}">
+		       <c:when test="${customer.name ==null}">
 		         <li><a href="reg.jsp">注册</a></li>
 		         <li><a href="login.jsp">登录</a></li>
 		       </c:when>

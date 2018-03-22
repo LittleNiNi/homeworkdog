@@ -2,11 +2,21 @@ package com.dog.model;
 
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
 
 /**
  * Dog entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "t_dog", catalog = "dog")
 public class Dog implements java.io.Serializable {
 
 	// Fields
@@ -15,8 +25,8 @@ public class Dog implements java.io.Serializable {
 	private String dogname;
 	private Double unitprice;
 	private String filepath;
-	private Set orders = new HashSet(0);
-	private Set orders_1 = new HashSet(0);
+	private Set<Order> orders = new HashSet<Order>(0);
+	private Set<Order> orders_1 = new HashSet<Order>(0);
 
 	// Constructors
 
@@ -25,8 +35,8 @@ public class Dog implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Dog(String dogname, Double unitprice, String filepath, Set orders,
-			Set orders_1) {
+	public Dog(String dogname, Double unitprice, String filepath,
+			Set<Order> orders, Set<Order> orders_1) {
 		this.dogname = dogname;
 		this.unitprice = unitprice;
 		this.filepath = filepath;
@@ -35,7 +45,10 @@ public class Dog implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@GenericGenerator(name = "generator", strategy = "increment")
+	@Id
+	@GeneratedValue(generator = "generator")
+	@Column(name = "dogid", unique = true, nullable = false)
 	public Integer getDogid() {
 		return this.dogid;
 	}
@@ -44,6 +57,7 @@ public class Dog implements java.io.Serializable {
 		this.dogid = dogid;
 	}
 
+	@Column(name = "dogname", length = 40)
 	public String getDogname() {
 		return this.dogname;
 	}
@@ -52,6 +66,7 @@ public class Dog implements java.io.Serializable {
 		this.dogname = dogname;
 	}
 
+	@Column(name = "unitprice", precision = 22, scale = 0)
 	public Double getUnitprice() {
 		return this.unitprice;
 	}
@@ -60,6 +75,7 @@ public class Dog implements java.io.Serializable {
 		this.unitprice = unitprice;
 	}
 
+	@Column(name = "filepath", length = 40)
 	public String getFilepath() {
 		return this.filepath;
 	}
@@ -68,19 +84,21 @@ public class Dog implements java.io.Serializable {
 		this.filepath = filepath;
 	}
 
-	public Set getOrders() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "dog")
+	public Set<Order> getOrders() {
 		return this.orders;
 	}
 
-	public void setOrders(Set orders) {
+	public void setOrders(Set<Order> orders) {
 		this.orders = orders;
 	}
 
-	public Set getOrders_1() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "dog")
+	public Set<Order> getOrders_1() {
 		return this.orders_1;
 	}
 
-	public void setOrders_1(Set orders_1) {
+	public void setOrders_1(Set<Order> orders_1) {
 		this.orders_1 = orders_1;
 	}
 
