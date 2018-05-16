@@ -1,0 +1,122 @@
+body{
+	font-family:"Microsoft Yahei",寰蒋闆呴粦,"Helvetica Neue",Arial,sans-serif;
+	font-size:16px;
+	background:white;
+}
+
+main{
+	margin-top:10px;
+}
+
+main .search-go{
+	float:right;
+	margin-right:200px;
+	padding:4px 15px;
+	font-family:"Microsoft Yahei",微软雅黑,"Helvetica Neue",Arial,sans-serif;
+	border:1px solid white;
+	border-radius:3px;
+	font-size:14px;
+	color:white;
+	background:#31a8e6;
+	
+}
+main .search-box{
+	height:30px;
+}
+main .search-go:hover{
+	
+	background:#3190e6;
+	
+}
+main .search{
+	
+	float:right;
+	margin-right:20px;
+	border:2px solid #31a8e6;
+	border-radius:5px;
+	font-size:14px;
+	height:24px;
+	width:200px;
+	
+	
+}
+main ul{
+	text-align:center;
+	margin:0 auto;
+	padding-left: 0;
+	list-style: none;
+	
+}
+main ul li{
+	display:inline-block;
+}
+main ul li img{
+	margin:30px 20px 0px 20px;
+	padding:5px;
+	width:300px;
+	height:250px;
+	border:4px solid silver;
+	border-radius:8px;
+}
+main ul li img:hover{
+	border:4px solid gray;
+}
+main ul li p{
+	text-align:center;
+}
+main ul li p span.price{
+	margin:0 20px;
+}
+main ul li p a.add{
+	padding:3px 12px;
+	border:2px solid #31a8e6;
+	border-radius:5px;
+	color:#31a8e6;
+	
+}
+main ul li p a.add:hover{
+	border:2px solid #3190e6;
+	color:#3190e6;
+}
+main h3{
+	text-align:center;
+}
+
+main table{
+	
+	margin:0 auto;
+	border:1px solid #31a8e6;
+	width:500px;
+	
+}
+main table th{
+	
+	height:50px;
+	
+}
+main table td{
+	
+	text-align:center;
+	height:40px;
+}
+
+
+.btn-file{overflow:hidden;position:relative;vertical-align:middle;}
+.btn-file>input{position:absolute;top:0;right:0;margin:0;opacity:0;filter:alpha(opacity=0);transform:translate(-300px, 0) scale(4);font-size:23px;direction:ltr;cursor:pointer;}
+.fileupload{margin-bottom:9px;}.fileupload .uneditable-input{display:inline-block;margin-bottom:0px;vertical-align:middle;cursor:text;}
+.fileupload .thumbnail{overflow:hidden;display:inline-block;margin-bottom:5px;vertical-align:middle;text-align:center;}.fileupload .thumbnail>img{display:inline-block;vertical-align:middle;height:100%;}
+.fileupload .btn{vertical-align:middle;}
+.fileupload-exists .fileupload-new,.fileupload-new .fileupload-exists{display:none;}
+.fileupload-inline .fileupload-controls{display:inline;}
+.fileupload-new .input-append .btn-file{-webkit-border-radius:0 3px 3px 0;-moz-border-radius:0 3px 3px 0;border-radius:0 3px 3px 0;}
+.thumbnail-borderless .thumbnail{border:none;padding:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;}
+.fileupload-new.thumbnail-borderless .thumbnail{border:1px solid #ddd;}
+.control-group.warning .fileupload .uneditable-input{color:#a47e3c;border-color:#a47e3c;}
+.control-group.warning .fileupload .fileupload-preview{color:#a47e3c;}
+.control-group.warning .fileupload .thumbnail{border-color:#a47e3c;}
+.control-group.error .fileupload .uneditable-input{color:#b94a48;border-color:#b94a48;}
+.control-group.error .fileupload .fileupload-preview{color:#b94a48;}
+.control-group.error .fileupload .thumbnail{border-color:#b94a48;}
+.control-group.success .fileupload .uneditable-input{color:#468847;border-color:#468847;}
+.control-group.success .fileupload .fileupload-preview{color:#468847;}
+.control-group.success .fileupload .thumbnail{border-color:#468847;}

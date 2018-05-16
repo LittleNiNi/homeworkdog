@@ -1,0 +1,24 @@
+#MyEclipse Hibernate Properties
+#Mon May 14 21:26:20 CST 2018
+sessionFactoryName=
+genBasicCompId=true
+profile=
+daoSFId=
+version=3.2
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDaoFile=
+useJavaTypes=true
+keyGenerator=assigned
+libInstallFolder=<no jars/zips in selected libraries>
+addLibs2Project=true
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=false
+reSettingsFile=/homeworkdog/hibernate.reveng.xml
+configFile=/homeworkdog/src/hibernate.cfg.xml
+createConfigFile=true
+addLibs2Classpath=true
