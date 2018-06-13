@@ -49,8 +49,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </c:if>
         <li><a href="index.jsp">狗狗收容</a></li>
         <li><a href="aboutus.jsp">关于我们</a></li>
-    
-       
+      <li><a href="comments.jsp">论坛</a></li>
+         <li><a href="MyClass.jsp">小课堂</a></li>
       </ul>
     
      <ul class="account">

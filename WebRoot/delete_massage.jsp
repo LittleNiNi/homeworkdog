@@ -24,6 +24,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-       成功删除了一种食物。
+       成功删除了一种狗。
   </body>
 </html>

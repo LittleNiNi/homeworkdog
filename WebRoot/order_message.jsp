@@ -24,7 +24,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
   </head>
   
-  <body>
-    成功买入一种狗狗
+   <body style="background:url(images/matthew-henry-64794-unsplash.jpg) no-repeat 0% 0%/100% 100%">
+  <div style="font-size:2.5em;line-height:1em; color:black; padding:380px 600px; height:50px; width:500px; ">
+  <p>
+  您可以带它回家了
+  </p>
+  </div>
+  
+    
   </body>
 </html>

@@ -1,5 +1,6 @@
 package com.dog.action;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -7,8 +8,11 @@ import javax.annotation.Resource;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -21,6 +25,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class CustomerAction extends ActionSupport implements SessionAware{
 	
 	private static final long serialVersionUID = 1L;
+	private String name;
 	
 	@Resource CustomerDao customerDao;
 	private Customer customer;
@@ -50,9 +55,18 @@ public class CustomerAction extends ActionSupport implements SessionAware{
 	
 	
 	public String reg() throws Exception{
+		ArrayList<Customer> listCustomer=customerDao.QueryCustomerInfo(customer.getName());
+		if(listCustomer.size()==0){
+			this.errMessage="此用户名可用！";
+			System.out.print(this.errMessage);
 		customerDao.AddCustomer(customer);
 		session.put("customer", customer);
 		return "show_view";
+		}else{
+			this.errMessage="此用户名已被注册！";
+			System.out.print(this.errMessage);
+			return "fail";
+		}
 	}
 	/*public String reg() throws Exception{
 		customerDao.addCustomer(customer);
@@ -139,6 +153,24 @@ public class CustomerAction extends ActionSupport implements SessionAware{
 //		
 //	}
 	
+	public String quName() throws IOException{
+	    HttpServletRequest request = ServletActionContext.getRequest();
+	    HttpServletResponse respons = ServletActionContext.getResponse(); 
+		String sendString;
+		respons.setContentType("text/html;charset=utf-8");
+		ArrayList<Customer> listCustomer=customerDao.QueryCustomerInfo(name);
+		if(listCustomer.size()==0){
+			sendString = "yes";
+			respons.getWriter().print(sendString);
+		}
+		else{
+			sendString = "no";
+		    respons.getWriter().print(sendString);
+		}
+		return null;
+		
+	}
+	
 	
 	//private Map<String,Object> session;
 	private String prePage;
@@ -155,4 +187,12 @@ public class CustomerAction extends ActionSupport implements SessionAware{
 		session.remove("customer");
 		return "re";
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 }
+
+

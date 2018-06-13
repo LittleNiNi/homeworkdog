@@ -20,23 +20,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="<%=basePath%>css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="<%=basePath%>css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 	<link rel="shortcut icon"  href="images/logo.jpg">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
   </head>
   
-  <body style="background:url(images/222.jpg) no-repeat 0% 0%/100% 100%" >
+<body >
   <div class="banner-section">
 			<div class="container">
 				<div class="banner-grids">
-					<div class="col-md-6 banner-grid">
-						
+					<div class="34" style="background:url(images/kuang.png) no-repeat 0% 0%/100% 100% ; height:700px;width:500px; float:left;">
+					<br>
+					<br>
 						<h2>狗狗名称:<c:out value="${dog.dogname }"></c:out></h2>
-                        <h2>单价:<c:out value="${dog.unitprice }"></c:out></h2>
-						
+                        <h2>单价:<c:out value="${dog.unitprice }"></c:out></h2><br><br><br>
+                       迎接狗狗要准备些什么才好？<br>如何让狗狗乖乖大小便？<br>不同阶段的幼犬该吃啥？<br>
+快到<a href="comments.jsp" target="_blank"><font color="blue">新宠大论坛</font></a>和大家交流吧<br>
+科学养宠，为爱宠创建无限美好！
+             
+					</div>
+					<div style="float:right;">
+					<img src="<%=basePath%><s:property value='dog.filepath'/>" width="570" height="570" alt="/">
 					</div>
 				<div class="col-md-6 banner-grid1" ">
 				</div>
+			
 				
 		</div>
 		</div>

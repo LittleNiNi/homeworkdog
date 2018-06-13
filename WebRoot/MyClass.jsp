@@ -47,8 +47,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <li><a href="index.jsp">狗狗收容</a></li>
         <li><a href="aboutus.jsp">关于我们</a></li>
       <li><a href="comments.jsp">论坛</a></li>
-         <li><a href="MyClass.jsp">小课堂</a></li>
-         
+      <li><a href="MyClass.jsp">小课堂</a></li>
+      
+       
       </ul>
     
      <ul class="account">
@@ -67,61 +68,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </header>
   
      <main>
-	    <s:form action="dog/dog_queryDogs" method="post">
-            <div class="form-inline search-box">
-              <div class="form-group pull-right mr200">
-                <input class="search-field form-control input-sm" title="关键词" name="keyWords" placeholder="输入关键词...">
-                <button class="button button-glow button-border button-rounded button-primary" type="submit" >搜  索</button>
-              </div> 
-            </div>
-            <p></p>
-            <div>
-            </div>
-	      <ul>
-	      <s:if test="#session.customer.name =='admin'">
-	        <li>		        
-		            <div class="add"><a href="index.jsp"><i class="fa fa-plus"></i> 添加狗</a></div>
-		              <p>点击上面的链接可以添加一种狗</p>		        
-	        </li>
-	        <s:iterator value="dogList" status="status">
-	          <li>
-	             <img src="<%=basePath%><s:property value='filepath'/>">
-	             <p>
-	                <a href="dog/dog_showDetail?dog.dogid=<s:property value='dogid'/>">
-	                  <s:property value="dogname"/>
-	                </a>
-	                <span class="price"> &yen;<s:property value="unitprice"/></span>
-	                <a href="dog/dog_showEdit?dog.dogid=<s:property 
-	                  value='dogid'/>">
-	                  <i class="fa fa-pencil"></i> 
-	                </a>
-	                &nbsp;&nbsp;<a href="dog/dog_deleteDog?dog.dogid=<s:property 
-	                  value='dogid'/>">
-	                  <i class="fa fa-trash"></i> 
-	                </a>
-	             </p>
-	          </li>
-	        </s:iterator>
-	        </s:if>
-	        <s:else>
-	          <s:iterator value="dogList" status="status">
-	          <li>
-	            <a href="dog/dog_showDetail?dog.dogid=<s:property value='dogid'/>">
-	           <img src="<%=basePath%><s:property value='filepath'/>" >
-	           </a>
-	             <p>
-	                  <s:property value="dogname"/> 
-	                <span class="price"> &yen;<s:property value="unitprice"/></span>
-	                <a href="order/order_addOrder?dog.dogid=<s:property 
-	                  value='dogid'/>&customer.name=<s:property value='#session.customer.name'/>" class="add-order">
-	                  <i >带回家</i>
-	                </a>
-	             </p>
-	          </li>
-	        </s:iterator>
-	        </s:else>
-	      </ul>
-	    </s:form>
+	    <ul>
+	    <li><a href="class1.jsp" target="_blank" alt="狗流眼泪"><img src=images/class1.png style="width:590px;height:330.39px"></a></li>
+	    <li><a href="class2.jsp" target="_blank" alt="狗流鼻涕"><img src=images/class2.png style="width:590px;height:330.39px"></a></li>
+	    <li><a href="class3.jsp" target="_blank" alt="狗流鼻涕"><img src=images/class3.png style="width:590px;height:330.39px"></a></li>
+	    <li><a href="class4.jsp" target="_blank" alt="狗流鼻涕"><img src=images/class4.png style="width:590px;height:330.39px"></a></li>
+	    </ul>
 	</main>
 	
   </body>
