@@ -271,7 +271,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #eee;
+  background-color: #fff;
 }
 input,
 button,
@@ -1788,7 +1788,7 @@ fieldset[disabled] .checkbox-inline {
   cursor: not-allowed;
 }
 .input-sm {
-  height: 36px;
+  height: 30px;
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;

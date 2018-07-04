@@ -6,26 +6,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!--  <html>
-  <head>
-    <base href="<%=basePath%>">
-    
-    <title>My JSP 'index.jsp' starting page</title>
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<meta http-equiv="Refresh" content="2;url=dog/dog_showDog">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	
-  </head>
-  
-  <body>
-    成功添加一种狗狗
-  </body>
-</html>-->
+
 
 <html>
 <head>
@@ -48,32 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 <body >
-	<!--header-->
-		<!--<header>
-    <nav>
-      <ul>
-        <li><a href="index.html">首页</a></li>
-        <li class="active"><a href="article.html">热卖推荐</a></li>
-       <li><a href="pic.html">购物车</a></li>
-        <li><a href="video.html">我的订单</a></li>
-        <li><a href="intro.html">关于我们</a></li>  
-     </ul>
-     <ul class="account">
-     			<c:choose>
-		       <c:when test="${customer.name 
- ==null}">
-		         <li><a href="reg.jsp">注册</a></li>
-		         <li><a href="login.jsp">登录</a></li>
-		       </c:when>
-		       <c:otherwise>
-		         <c:out value="${customer.name 
-}"></c:out> 
-		       </c:otherwise>
-		    </c:choose>						
-          </ul>
-          </nav>   
-  </header>-->
-			<!--header-->
+
 		<div class="banner-section">
 			<div class="container">
 				<div class="banner-grids">
@@ -90,13 +46,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		</div>
 		</div>
-		
-		<!--requried-jsfiles-for owl-->
-		
-		<!--requried-jsfiles-for owl -->
-		<!--start content-slider-->
-		
-	<!--footer--><!--footer-->
+
 		
 </body>
 </html>

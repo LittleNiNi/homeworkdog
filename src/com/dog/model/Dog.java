@@ -25,6 +25,8 @@ public class Dog implements java.io.Serializable {
 	private String dogname;
 	private Double unitprice;
 	private String filepath;
+	private Double price;
+	private String sex;
 	private Set<Order> orders = new HashSet<Order>(0);
 	private Set<Order> orders_1 = new HashSet<Order>(0);
 
@@ -34,17 +36,14 @@ public class Dog implements java.io.Serializable {
 	public Dog() {
 	}
 
-	/** minimal constructor */
-	public Dog(String filepath) {
-		this.filepath = filepath;
-	}
-
 	/** full constructor */
-	public Dog(String dogname, Double unitprice, String filepath,
-			Set<Order> orders, Set<Order> orders_1) {
+	public Dog(String dogname, Double unitprice, String filepath, Double price,
+			String sex, Set<Order> orders, Set<Order> orders_1) {
 		this.dogname = dogname;
 		this.unitprice = unitprice;
 		this.filepath = filepath;
+		this.price = price;
+		this.sex = sex;
 		this.orders = orders;
 		this.orders_1 = orders_1;
 	}
@@ -80,7 +79,7 @@ public class Dog implements java.io.Serializable {
 		this.unitprice = unitprice;
 	}
 
-	@Column(name = "filepath", nullable = false, length = 100)
+	@Column(name = "filepath", length = 100)
 	public String getFilepath() {
 		return this.filepath;
 	}
@@ -89,7 +88,25 @@ public class Dog implements java.io.Serializable {
 		this.filepath = filepath;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "dog")
+	@Column(name = "price", precision = 22, scale = 0)
+	public Double getPrice() {
+		return this.price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	@Column(name = "sex", length = 200)
+	public String getSex() {
+		return this.sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "dog")
 	public Set<Order> getOrders() {
 		return this.orders;
 	}
@@ -98,7 +115,7 @@ public class Dog implements java.io.Serializable {
 		this.orders = orders;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "dog")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "dog")
 	public Set<Order> getOrders_1() {
 		return this.orders_1;
 	}

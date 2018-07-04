@@ -10,14 +10,12 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.annotation.Resource;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import com.dog.dao.DdogDao;
 import com.dog.dao.DogDao;
 import com.dog.model.*;
 import com.opensymphony.xwork2.ActionSupport;
@@ -29,14 +27,13 @@ public class DogAction extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	/*业务对象*/
 	@Resource DogDao dogDao;
+	@Resource DdogDao ddogDao;
 	
 	private Dog dog;
 	private File dogPhoto;
 	private String dogPhotoFileName;
 	private String dogPhotoContentType;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="dog")
 	public Dog getDog() {
 		return dog;
 	}
@@ -106,6 +103,7 @@ public class DogAction extends ActionSupport{
 	}
 	
 	public String addDog() throws Exception{
+		System.out.println("ssss");
 String path=ServletActionContext.getServletContext().getRealPath("/upload");
 		
 		String dogPhotoFileName="";
@@ -134,13 +132,15 @@ String path=ServletActionContext.getServletContext().getRealPath("/upload");
 			dog.setFilepath("upload/"+dogPhotoFileName);
 		else
 			dog.setFilepath("upload/NoImage.jpg");
-		
+		int s = dog.getDogid();
 		dogDao.AddDog(dog);
+		ddogDao.DeleteDdog(s);
 		return "message";
 		
 	}
 
 	public String deleteDog() throws Exception{
+	    
 		dogDao.DeleteDog(dog.getDogid());
 		return "delete_message";
 	}

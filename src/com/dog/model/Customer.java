@@ -25,6 +25,9 @@ public class Customer implements java.io.Serializable {
 	private String name;
 	private String address;
 	private String password;
+	private String sex;
+	private String email;
+	private String telephone;
 	private Set<Order> orders = new HashSet<Order>(0);
 	private Set<Order> orders_1 = new HashSet<Order>(0);
 
@@ -35,11 +38,15 @@ public class Customer implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Customer(String name, String address, String password,
-			Set<Order> orders, Set<Order> orders_1) {
+	public Customer(String name, String address, String password, String sex,
+			String email, String telephone, Set<Order> orders,
+			Set<Order> orders_1) {
 		this.name = name;
 		this.address = address;
 		this.password = password;
+		this.sex = sex;
+		this.email = email;
+		this.telephone = telephone;
 		this.orders = orders;
 		this.orders_1 = orders_1;
 	}
@@ -82,6 +89,33 @@ public class Customer implements java.io.Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	@Column(name = "sex", length = 40)
+	public String getSex() {
+		return this.sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	@Column(name = "email", length = 40)
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Column(name = "telephone", length = 40)
+	public String getTelephone() {
+		return this.telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "customer")

@@ -1,15 +1,15 @@
 package com.dog.action;
 
-import java.io.IOException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.annotation.Resource;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 
 import org.apache.struts2.ServletActionContext;
@@ -25,12 +25,9 @@ import com.opensymphony.xwork2.ActionSupport;
 public class CustomerAction extends ActionSupport implements SessionAware{
 	
 	private static final long serialVersionUID = 1L;
-	private String name;
 	
 	@Resource CustomerDao customerDao;
 	private Customer customer;
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="customer")
 	private Map<String,Object> session;
 	public Customer getCustomer() {
 		return customer;
@@ -55,41 +52,22 @@ public class CustomerAction extends ActionSupport implements SessionAware{
 	
 	
 	public String reg() throws Exception{
-		ArrayList<Customer> listCustomer=customerDao.QueryCustomerInfo(customer.getName());
-		if(listCustomer.size()==0){
-			this.errMessage="此用户名可用！";
-			System.out.print(this.errMessage);
 		customerDao.AddCustomer(customer);
 		session.put("customer", customer);
 		return "show_view";
-		}else{
-			this.errMessage="此用户名已被注册！";
-			System.out.print(this.errMessage);
-			return "fail";
-		}
-	}
-	/*public String reg() throws Exception{
-		customerDao.addCustomer(customer);
-		session.put("customer", customer);
-		return "show_view";
 	}
 	
+	
+	
+	private File customerPhoto;
+	private String customerPhotoFileName;
+    private String customerPhotoContentType;
 
-	public String login() {
-		Customer db_customer = (Customer)customerDao.QueryCustomerInfo(customer.getName()).get(0);
-		if(db_customer == null) { 
-			this.errMessage = " 账号不存在 ";
-			System.out.print(this.errMessage);
-			return INPUT;
-		} else if( !db_customer.getPassword().equals(customer.getPassword())) {
-			this.errMessage = " 密码不正确! ";
-			System.out.print(this.errMessage);
-			return INPUT;
-		}
-		return "show_view";
-	}
+	//public String change() throws Exception{
+		//   String path = ServletActionContext.getServletContext().getRealPath("/images");
+			 
+		 
 	
-	*/
 	
 	/* 验证用户登录 */
 	public String login() {
@@ -153,24 +131,6 @@ public class CustomerAction extends ActionSupport implements SessionAware{
 //		
 //	}
 	
-	public String quName() throws IOException{
-	    HttpServletRequest request = ServletActionContext.getRequest();
-	    HttpServletResponse respons = ServletActionContext.getResponse(); 
-		String sendString;
-		respons.setContentType("text/html;charset=utf-8");
-		ArrayList<Customer> listCustomer=customerDao.QueryCustomerInfo(name);
-		if(listCustomer.size()==0){
-			sendString = "yes";
-			respons.getWriter().print(sendString);
-		}
-		else{
-			sendString = "no";
-		    respons.getWriter().print(sendString);
-		}
-		return null;
-		
-	}
-	
 	
 	//private Map<String,Object> session;
 	private String prePage;
@@ -181,18 +141,36 @@ public class CustomerAction extends ActionSupport implements SessionAware{
 	public void setPrePage(String prePage) {
 		this.prePage = prePage;
 	}
-
 	public String re(){
+
 		System.out.println("hhaa");
+
 		session.remove("customer");
+
 		return "re";
+
 	}
-	public String getName() {
-		return name;
+	public String getCustomerPhotoFileName() {
+		return customerPhotoFileName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setCustomerPhotoFileName(String customerPhotoFileName) {
+		this.customerPhotoFileName = customerPhotoFileName;
 	}
+	public String getCustomerPhotoContentType() {
+		return customerPhotoContentType;
+	}
+	public void setCustomerPhotoContentType(String customerPhotoContentType) {
+		this.customerPhotoContentType = customerPhotoContentType;
+	}
+
+	public String edit() throws Exception{
+		//System.out.println("?????");
+		System.out.println(customer.getCustomerid());
+		System.out.println(customer.getName());
+		System.out.println(customer.getAddress());
+		System.out.println(customer.getPassword());
+		customerDao.UpdateCustomer(customer);
+		return "e";
+	}
+	
 }
-
-

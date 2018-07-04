@@ -19,12 +19,15 @@
             </column>
         </property>
         <property name="filepath" type="java.lang.String">
-            <column name="filepath" length="200" not-null="true" />
-        </property>
-        <property name="price" type="java.lang.Double">
-            <column name="price" precision="22" scale="0" />
+            <column name="filepath" length="40" />
         </property>
         <set name="orders" inverse="true">
+            <key>
+                <column name="dog" not-null="true" />
+            </key>
+            <one-to-many class="com.dog.model.Order" />
+        </set>
+        <set name="orders_1" inverse="true">
             <key>
                 <column name="dog" not-null="true" />
             </key>

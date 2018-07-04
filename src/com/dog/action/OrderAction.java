@@ -3,9 +3,6 @@ package com.dog.action;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -31,8 +28,6 @@ public class OrderAction extends ActionSupport{
 	private Customer customer;
 	private Dog dog;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="order")
 	public Order getOrder() {
 		return order;
 	}
@@ -87,5 +82,12 @@ public class OrderAction extends ActionSupport{
 		orderList=orderDao.QueryOrderInfo(customer, dog);
 		return "show_view";
 	}
+	public String deleteOrder() throws Exception{
+		Order order2 = orderDao.GetOrderById(order.getOrderid());
+		order2.getCustomer().getOrders().remove(order2);
+		orderDao.deleteOrder2(order2);
+		return "delete_message";
+	}
+	
 
 }

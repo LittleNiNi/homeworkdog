@@ -22,7 +22,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link href="<%=basePath%>css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="<%=basePath%>css/signin.css" rel="stylesheet">
     <link rel="shortcut icon"  href="images/logo.jpg">
+    
      <script src="<%=basePath%>js/ie-emulation-modes-warning.js"></script>
+     <link rel="stylesheet" type="text/css" href="css/new.css"/>
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -35,19 +37,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <li class="banner">Take Me Home</li>
       
     </ul>
-    <nav>
-      <ul>
-
+  <nav>
+        <ul>
          <li><a href="zhuyao.jsp">首页</a></li>
-       <li class="active"><a href="dog/dog_queryDogs?keyWords=">热卖推荐</a></li>
-       <c:if test="${customer.name !=null}">
+        <li class="active"><a href="dog/dog_queryDogs?keyWords=">热卖推荐</a></li>
+            <c:if test="${customer.name !=null}">
+
         <li><a href="order/order_showOrder?customer.name=${session.customer.name}">购物车</a></li>
+
         </c:if>
         <li><a href="index.jsp">狗狗收容</a></li>
         <li><a href="aboutus.jsp">关于我们</a></li>
-      <li><a href="comments.jsp">论坛</a></li>
-         <li><a href="MyClass.jsp">小课堂</a></li>
-         
+          <li><a href="comments.jsp">论坛</a></li>
+         <li><a href="video.jsp">小课堂</a></li>
+     <c:if test="${customer.name =='admin'}">
+
+        <li><a href="ddog/ddog_queryDdogs?keyWords=">待审核</a></li>
+
+        </c:if>
+       
       </ul>
     
      <ul class="account">
@@ -57,12 +65,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		         <li><a href="login.jsp">登录</a></li>
 		       </c:when>
 		       <c:otherwise>
-		         <li><c:out value="${customer.name }"></c:out> , 欢迎您!</li>
-		         <li><a href="customer/customer_re">注销</a></li>
+		         <c:out value="${customer.name }"></c:out> , 欢迎您!
+		          <li><a href="customer/customer_re">注销</a></li>
 		       </c:otherwise>
 		    </c:choose>						
           </ul>
-          </nav>
+          </nav>   
           
   </header>
   <main class="container-fluid">

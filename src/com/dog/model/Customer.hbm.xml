@@ -25,5 +25,11 @@
             </key>
             <one-to-many class="com.dog.model.Order" />
         </set>
+        <set name="orders_1" inverse="true">
+            <key>
+                <column name="customer" />
+            </key>
+            <one-to-many class="com.dog.model.Order" />
+        </set>
     </class>
 </hibernate-mapping>

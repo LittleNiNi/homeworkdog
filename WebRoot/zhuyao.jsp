@@ -6,7 +6,7 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <base href="<%=basePath%>">
@@ -27,30 +27,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="${pageContext.request.contextPath }/js/ie-emulation-modes-warning.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath }/js/bootstrap.min.js"></script>
-	
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
   </head>
   
   <body>
-       <header>
+        <header>
     <ul>
       
       <li class="banner">Take Me Home</li>
       
     </ul>
-    <nav>
+  <nav>
       <ul>
-
         <li><a href="zhuyao.jsp">首页</a></li>
         <li class="active"><a href="dog/dog_queryDogs?keyWords=">热卖推荐</a></li>
-         <c:if test="${customer.name !=null}">
-        <c:if test="${customer.name !=null}">
-        <li><a href="order/order_showOrder?customer.name=${session.customer.name}">购物车</a></li>
+        
+        <c:if test="${customer.name !=null&&customer.name!='admin'}">
+
+            <li><a href="order/order_showOrder?customer.name=${session.customer.name}">购物车</a></li>
+            <li><a href="index.jsp">狗狗收容</a></li>    
         </c:if>
+        
+        
+        <c:if test="${customer.name =='admin'}">
+            <li><a href="index.jsp">添加狗</a></li>
+            <li><a href="ddog/ddog_queryDdogs?keyWords=">待审核</a></li>
         </c:if>
-        <li><a href="index.jsp">狗狗收容</a></li>
+        <li><a href="comments/comments_queryall">论坛</a></li>
+        <li><a href="MyClass.jsp">小课堂</a></li>
         <li><a href="aboutus.jsp">关于我们</a></li>
-      <li><a href="comments.jsp">论坛</a></li>
-         <li><a href="MyClass.jsp">小课堂</a></li>
       </ul>
     
      <ul class="account">
@@ -60,14 +67,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		         <li><a href="login.jsp">登录</a></li>
 		       </c:when>
 		       <c:otherwise>
-		        <li><c:out value="${customer.name }"></c:out> , 欢迎您!</li>
-		         <li><a href="customer/customer_re">注销</a></li>
+		       <a href="change.jsp">
+		         <c:out value="${customer.name }"></c:out> </a>, 欢迎您!
+		           <li><a href="customer/customer_re">注销</a></li>
 		       </c:otherwise>
 		    </c:choose>						
           </ul>
-          </nav>
-          
+          </nav>     
   </header>
+
    <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">

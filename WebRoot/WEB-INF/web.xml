@@ -33,6 +33,6 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
   <welcome-file-list>
-    <welcome-file>zhuyao.jsp</welcome-file>
+    <welcome-file>first.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

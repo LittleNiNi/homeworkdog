@@ -34,6 +34,11 @@ public class OrderDao {
 		
 	}
 	
+    public void deleteOrder2(Order order) throws Exception {
+		Session s = factory.getCurrentSession();
+		s.delete(order);
+	}
+	
     public void UpdateOrder(Order order) throws Exception {
         Session s = factory.getCurrentSession();
         s.update(order);
@@ -63,4 +68,5 @@ public class OrderDao {
     	List orderList=q.list();
     	return (ArrayList<Order>) orderList;
     }
+    
 }

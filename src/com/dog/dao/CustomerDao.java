@@ -1,15 +1,10 @@
 package com.dog.dao;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -68,7 +63,5 @@ public class CustomerDao {
     	}
     	return (ArrayList<Customer>) customerList;
     }
-
-    
 
 }

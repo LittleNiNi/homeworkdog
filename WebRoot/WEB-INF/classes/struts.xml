@@ -46,7 +46,7 @@
      -->
      <package name="dog" namespace="/dog" extends="default" >
         <action name="dog_*" class="dogAction" method="{1}">
-            <result name="message">/message.jsp</result>
+            <result name="message">/customer_show.jsp</result>
         	<result name="show_view">/main.jsp</result>
         	<result name="detail_view">/detail.jsp</result>
         	<result name="edit_view">/edit.jsp</result>
@@ -67,8 +67,9 @@
             </result>
             <result name="input">/login.jsp</result>
             <result name="re">/MyJsp.jsp</result>
+            <result name="change">/main.jsp</result>
+            <result name="e">/main.jsp</result>
             <result name="success">/MyJsp.jsp</result>
-            <result name="fail">/reg.jsp</result>
         </action>  
 	 </package> 
 	 
@@ -78,8 +79,36 @@
 	 <package name="order" namespace="/order" extends="default" >
         <action name="order_*" class="orderAction" method="{1}">
             <result name="order_message">/order_message.jsp</result>
-            <result name="show_view">/order_main.jsp</result>
+            <result name="show_view">/order_test.jsp</result>
+            <result name="detail_view">/order_detail.jsp</result>
+            <result name="delete_message">/delete_message2.jsp</result>
+        </action>  
+	 </package>   
+	 
+	 
+	  <package name="ddog" namespace="/ddog" extends="default" >
+        <action name="ddog_*" class="ddogAction" method="{1}">
+            <result name="message_no">/message_no.jsp</result>
+        	
+        	<result name="detail_view">/detail.jsp</result>
+        	<result name="edit_view">/edit.jsp</result>
+        	<result name="delete_message">/customer_show.jsp</result>
+        	<result name="edit_message">/edit_message.jsp</result>
+        	<result name="show_view">/customer_show.jsp</result>
+        </action>
+	 </package>     	
+	 
+	 <package name="comments" namespace="/comments" extends="default" >
+        <action name="comments_*" class="commentsAction" method="{1}">
+            <result name="lihao">/comments.jsp</result>
+        </action>  
+	 </package> 
+	 
+	 <package name="barrage" namespace="/barrage" extends="default" >
+        <action name="barrage_*" class="barrageAction" method="{1}">
+            <result name="order_message">/order_message.jsp</result>
+            <result name="show">/order_main.jsp</result>
             <result name="detail_view">/order_detail.jsp</result>
         </action>  
-	 </package>       	 
+	 </package>      
 </struts>

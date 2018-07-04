@@ -18,4 +18,19 @@
 			<generator class="increment"></generator>
 		</primary-key>
 	</table>
+	<table name="t_ddog" catalog="dog" class="com.dog.model.Ddog">
+		<primary-key>
+			<generator class="increment"></generator>
+		</primary-key>
+	</table>
+	<table name="barrage" catalog="dog" class="com.dog.model.Barrage">
+		<primary-key>
+			<generator class="increment"></generator>
+		</primary-key>
+	</table>
+<table name="comments" catalog="dog" class="com.dog.model.Comments">
+	<primary-key>
+		<generator class="increment"></generator>
+	</primary-key>
+</table>
 </hibernate-reverse-engineering>

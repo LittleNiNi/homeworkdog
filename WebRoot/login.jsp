@@ -33,17 +33,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <input type="text" required="required" placeholder="ÓÃ»§Ãû" name="customer.name"></input>
       <input type="password" required="required" placeholder="ÃÜÂë" name="customer.password"></input> 
       <button class="hi" type="submit" >µÇÂ¼</button> 
-       
     </s:form> 
-    <!--<button class="hi" type="submit"  href="reg.jsp">×¢²á</button> -->
    </div> 
 
 
-   <!--  <s:form action="customer/customer_login" method="post">
-      <s:textfield name="customer.name" label="ÓÃ»§Ãû" cssClass="input"></s:textfield>
-      <s:password name="customer.password" label="ÃÜÂë" cssClass="input"></s:password>
-      <s:submit value="µÇÂ¼" cssClass="but"></s:submit>
-    </s:form> -->
+
     <br>
   </body>
 </html>

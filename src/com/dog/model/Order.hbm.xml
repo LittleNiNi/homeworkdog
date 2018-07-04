@@ -10,10 +10,10 @@
             <column name="orderid" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="customer" class="com.dog.model.Customer" fetch="select">
+        <many-to-one name="customer" class="com.dog.model.Customer" fetch="select" >
             <column name="customer" />
         </many-to-one>
-        <many-to-one name="dog" class="com.dog.model.Dog" fetch="select">
+        <many-to-one name="dog" class="com.dog.model.Dog" fetch="select" >
             <column name="dog" not-null="true" />
         </many-to-one>
         <property name="dognum" type="java.lang.Integer">

@@ -1,5 +1,5 @@
 #MyEclipse Hibernate Properties
-#Mon May 14 21:26:20 CST 2018
+#Wed Jul 04 14:25:45 CST 2018
 sessionFactoryName=
 genBasicCompId=true
 profile=
@@ -17,7 +17,7 @@ addLibs2Project=true
 genVersionTag=false
 sessionFactoryId=
 basePersistenceClass=
-genAnnotations=false
+genAnnotations=true
 reSettingsFile=/homeworkdog/hibernate.reveng.xml
 configFile=/homeworkdog/src/hibernate.cfg.xml
 createConfigFile=true
